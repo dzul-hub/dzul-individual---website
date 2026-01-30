@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dzul Index</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1b1f27 0%, #111318 100%);
+      color: #eaeaea;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+    }
+
+    .profile-container {
+      max-width: 850px;
+      margin: 3rem auto;
+      background: #1c1f25;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+
+    .profile-header {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      background: linear-gradient(135deg, #3b1d77, #1e90ff);
+    }
+
+    .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+
+    .profile-header h1 {
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.8rem;
+    }
+
+    .info-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    a.menu-link {
+      display: block;
+      background: #2a2f38;
+      padding: 1rem;
+      margin: 0.7rem 0;
+      border-radius: 15px;
+      text-decoration: none;
+      color: #eaeaea;
+      border-left: 5px solid #5b3cc4;
+      transition: all 0.3s ease;
+    }
+
+    a.menu-link:hover {
+      background: #333843;
+      transform: translateX(10px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      cursor: pointer;
+    }
+
+    .datetime-box {
+      text-align: center;
+      margin: 2rem auto 1.2rem auto;
+      padding: 0.6rem 1.5rem;
+      max-width: 380px;
+      background: rgba(30, 144, 255, 0.15);
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Assignment text (LEFT aligned) */
+    .assignment-text {
+      text-align: left;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      white-space: normal;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="profile-container">
+    <header class="profile-header">
+      <img class="profile-photo"
+           src="muhd.png"
+           alt="Profile Picture"
+           onerror="this.onerror=null; this.src='https://via.placeholder.com/160';">
+      <h1 contenteditable="true">Syed Muhammad Asyraf Al-Hakim</h1>
+      <p contenteditable="true">BELIEVE IN YOURSELF</p>
+    </header>
+
+    <section class="info-section">
+      <a class="menu-link" href="background.html">Background</a>
+      <a class="menu-link" href="achievement.html">Achievement</a>
+      <a class="menu-link" href="education.html">Education</a>
+      <a class="menu-link" href="gallery.html">Gallery</a>
+      <a class="menu-link" href="contact.html">Contact</a>
+    </section>
+  </main>
+
+  <!-- Date & Time -->
+  <div id="currentDateTime" class="datetime-box"></div>
+
+  <!-- Assignment Text (LEFT aligned & stable) -->
+  <div class="datetime-box assignment-text">
+    @This website is created to fulfill the requirement of IMD318 Individual Assignment
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      document.getElementById('currentDateTime').textContent =
+        now.toLocaleString('en-US', options);
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+
+</body>
+</html>
